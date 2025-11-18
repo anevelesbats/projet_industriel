@@ -51,3 +51,23 @@ main
 └── develop
     └── develop_name
 ```
+## Notes réunion
+- Stage Kylian Canivet (ancien enseirb)
+- Extrait algo radar civil (avion ou hélicoptère), radar millimétrique (Attention encombrement— - et consommation — -):
+- Calcul matriciel, le déployer sur les 32 coeurs vectoriels et potentiellement de la logique programmable
+- Suite Vitis(licence d'évaluation) pour supporter du Matlab/Simulink ==> compatibilité version (site AMD : donner le nom de Franck Jeulin en cas de contact avec le support : Ludovic Bacquart, ludovic.bacquart@amd.com)
+- Aller chercher de la doc sur AMD, et sur le fournisseur de la carte
+- Pouvoir utiliser ce FPGA afin d'éviter d'utiliser des gros processeurs et gros DSP
+- Travailler sur les parties de l'algo énergivore
+- Entrée(X4) -> FFC -> FFT1 -> FFT2 -> Calcul du max -> sortie(X2)
+- Éclater chaque bloc de l'algo sur plusieurs coeurs AIEngine ==> puis une concaténation
+- Génération de C depuis le Matlab/Simulink
+- Exécution en simulation : Model Composer (fait partie de Vitis) 
+- Exécution sur carte : produire des données et les exploiter (entrée + sortie) et vérifier le fonctionnement
+- Générer des données d'entrées
+- Distribuer les données aux différents AIE
+- Effectuer les traitements
+- Sortir les données en sortie de l'algo
+- Démonstration : montrer les différences de temps d'exécution avant et après ce portage
+
+MONSIEUR JEULIN A DIT : NE COMPRENEZ PAS L'ALGORITHME, PORTAGE DE L'ALGORITHME
